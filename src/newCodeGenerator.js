@@ -6,14 +6,23 @@ async function generateCode() {
     }
 
     const hashTable = Object.keys(await response.json());
-    // const hashTable = Object.keys(hashTable)
-    console.log(hashTable)
+    console.log(hashTable);
 
-    let output = "f"
+    let output = "f";
+
     for (let i = 0; i < 16; i++) {
-        output+=hashTable[Math.floor(Math.random() * 4)];
-        output+=hashTable[Math.floor(Math.random() * (15 - 4 + 1)) + 4];
+        const random1 = Math.floor(Math.random() * 4);
+        const random2 = Math.floor(Math.random() * (hashTable.length - 4) + 4);
+
+        output += hashTable[random1];
+        output += hashTable[random2];
     }
 
-    return output
+    const lastSix = output.slice(-6);
+    if (new Set(lastSix).size === 1) {
+        output = output.slice(0, -1);
+        output += hashTable[Math.floor(Math.random() * hashTable.length)];
+    }
+
+    return output;
 }
