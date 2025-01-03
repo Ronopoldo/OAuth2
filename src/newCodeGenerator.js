@@ -1,5 +1,5 @@
 async function generateCode() {
-    const response = await fetch("../data/decodingTable.json");
+    const response = await fetch("https://ronopoldo.github.io/OAuth2/data/decodingTable.json");
 
     if (!response.ok) {
         throw new Error(`Ошибка HTTP: ${response.status}`);
