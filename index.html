@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мега аунтификатор</title>
+</head>
+<body>
+    <h1>Добро пожаловать в аунтификатор!</h1>
+    <button id="newCode">Сгенерировать код</button>
+    <input type="text" id="codeHash" value="ЗДЕСЬ ПОЯВИТСЯ КОД" readonly>
+    <button id="copyButton">Копировать</button>
+    <br>
+    <p>Вставьте свой код в строку: </p>
+    <input type="text" id="iternalCode">
+    <button id="applyButton">Применить</button>
+    <br>
+    <h2>Сгенерированный код:</h2>
+    <h3 id="codeBox">000000</h3>
+    <progress id="myProgress" value="0" max="100"></progress>
+
+</body>
+
+<script src="index.js"></script>
+<script src="src/updater.js"></script>
+<script src="src/encoder.js"></script>
+<script src="src/newCodeGenerator.js"></script>
+
+</html>
